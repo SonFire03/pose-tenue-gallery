@@ -59,14 +59,16 @@ async function downloadGallery(gallery) {
     const targetRoot = path.resolve(gallery.out) + path.sep;
     if (!path.resolve(target).startsWith(targetRoot)) throw new Error(`Chemin invalide: ${relative}`);
     await mkdir(path.dirname(target), { recursive: true });
-    try {
-      const existing = await stat(target);
-      if (existing.isFile() && existing.size > 0) {
-        done++;
-        continue;
+    if (process.env.FORCE_DOWNLOAD !== '1') {
+      try {
+        const existing = await stat(target);
+        if (existing.isFile() && existing.size > 0) {
+          done++;
+          continue;
+        }
+      } catch {
+        // Le fichier n'existe pas encore.
       }
-    } catch {
-      // Le fichier n'existe pas encore.
     }
     const image = await fetch(new URL(relative, gallery.url));
     if (!image.ok) {

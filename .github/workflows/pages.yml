@@ -26,12 +26,14 @@ jobs:
         with:
           lfs: true
 
-      - name: Forcer le téléchargement des images LFS
+      - name: Restaurer les vraies images
         run: |
-          git lfs pull
-          git lfs checkout
-          if grep -RIl --exclude='*.json' 'version https://git-lfs.github.com/spec' assets | head -1; then
-            echo "Des pointeurs Git LFS sont encore présents dans assets/."
+          if [ ! -d assets ] || grep -RIl --exclude='*.json' 'version https://git-lfs.github.com/spec' assets | head -1; then
+            echo "Images LFS détectées : reconstruction depuis les galeries autorisées."
+            FORCE_DOWNLOAD=1 node download-galleries.mjs
+          fi
+          if [ ! -d assets ] || [ "$(find assets -type f | wc -l)" -eq 0 ]; then
+            echo "Aucune image disponible après reconstruction."
             exit 1
           fi
 
