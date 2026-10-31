@@ -57,6 +57,14 @@
   <style>
     .launch-screen{position:fixed;inset:0;z-index:100;background:#0e1014;display:grid;place-content:center;justify-items:center;gap:18px;color:#e9ded0;transition:opacity .3s ease}.launch-screen img{width:96px;height:96px;border-radius:23px}.launch-screen p{margin:0;font-weight:600;letter-spacing:.12em}.launch-screen.done{opacity:0;pointer-events:none}#installApp{border-color:#d0ab8155}#installHelp{max-width:420px;line-height:1.6}#installHelp p{color:var(--muted)}@media(prefers-reduced-motion:reduce){.launch-screen{transition:none}}
   </style>
+  <style>
+    @media (prefers-reduced-motion: no-preference){
+      @keyframes revealCard{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes revealDialog{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+      .grid .card{animation:revealCard .24s ease-out both}.grid .card:nth-child(4n+2){animation-delay:.025s}.grid .card:nth-child(4n+3){animation-delay:.05s}.grid .card:nth-child(4n){animation-delay:.075s}
+      dialog[open]{animation:revealDialog .2s ease-out both}.tab,.category,.tool-btn,.fav,.close,.download{transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease}.tab:active,.category:active,.tool-btn:active,.fav:active{transform:scale(.97)}
+    }
+  </style>
 </head>
 <body>
   <div class="launch-screen" id="launchScreen" aria-hidden="true"><img src="icons/app-192.png" alt=""><p>POSE &amp; TENUE</p></div>
