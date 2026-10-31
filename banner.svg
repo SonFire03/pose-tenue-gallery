@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+<title id="title">Pose &amp; Tenue</title><desc id="desc">Galerie de références visuelles pour la création</desc>
+<defs><radialGradient id="bg"><stop stop-color="#29231f"/><stop offset="1" stop-color="#101115"/></radialGradient><linearGradient id="gold"><stop stop-color="#f4e4cf"/><stop offset="1" stop-color="#c29b78"/></linearGradient></defs>
+<rect width="1280" height="640" fill="url(#bg)"/><circle cx="1080" cy="80" r="260" fill="#d8b18b" opacity=".05"/><rect x="66" y="66" width="1148" height="508" rx="28" fill="none" stroke="#e9ded0" opacity=".14"/>
+<image href="icons/app-512.png" x="760" y="115" width="410" height="410"/>
+<text x="130" y="217" fill="#d5b394" font-family="sans-serif" font-size="20" letter-spacing="5">BIBLIOTHÈQUE CRÉATIVE</text>
+<text x="124" y="322" fill="url(#gold)" font-family="sans-serif" font-weight="700" font-size="82" letter-spacing="-3">Pose &amp; Tenue</text>
+<text x="130" y="386" fill="#c9c0b6" font-family="sans-serif" font-size="26">Des références pour imaginer et créer.</text>
+<text x="130" y="466" fill="#ac9d8d" font-family="sans-serif" font-size="19" letter-spacing="2">POSES  ·  TENUES  ·  INSPIRATION</text>
+</svg>
